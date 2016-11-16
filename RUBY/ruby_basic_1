@@ -43,15 +43,25 @@ B.kesys 해시의 키값 찾기
 
 -print File.read("")  //""파일을 읽으세요.
 -FileUtils.cp('A', 'B')   // A 파일을 B위치에 복사(cp)
+
+-File.open("/Home/comics.txt", "a") do |f|
+	f << "testtesttest"
+end    
+
+
 -File.mtime("")  //""파일의 마지막 수정일자
 
+
+===================================================
 - Popup
 
--Popup.goto "http:// "  주소를 팝업
+-Popup.goto "http:// "  바로 해당주소를 팝업으로 
+
 -Popup.make {
 		 h1 "My Links"    //문자찍기
  		link "Go to Bing", "http://bing.com"  //링크만들기
 	}
+
 -Popup.make do
   h1 "Things To Do"
   list do
@@ -61,7 +71,16 @@ B.kesys 해시의 키값 찾기
   end
 end
 
-[opentutorial]
+Popup.make do
+  h1 "Comics on the Web"
+  list do
+    comics.each do |name, url|
+      link name, url
+    end
+  end
+end
+
+===============================================================================
 - 메소드
 
  def test_method (arg = 100)
@@ -70,3 +89,16 @@ end
  						//return 값이 여러개일수 있음.
 
 
+
+
+def load_comics( var )
+  comics = {}
+  File.foreach( var ) do |line|
+    name, url = line.split(': ')
+    comics[name] = url.strip
+  end
+  comics
+end
+
+
+require 'popup' : popup이라는 라이브러리를 가져옴
