@@ -1,6 +1,8 @@
 WAMP 설치하기
 
 1. https://bitnami.com/stack/wamp 다운받기
+(설치 과정중에 비밀번호 입력이 나오는데 잘 기억해두세요. 
+나중에 워크벤치로 mysqlDB접속할때 쓰이는 비밀번호입니다. )
 
 설치 완료 화면
  - go to application : 연결이 잘되었으면 localhost 에 비트나미 화면이 나온다
