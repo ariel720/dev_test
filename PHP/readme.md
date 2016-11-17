@@ -23,8 +23,17 @@ https://codeigniter.com/
 
 
 
-3. 
+4.php DB연동하기
 
 
+1) mysql & workbench 설치
 
- - DB : 코드이그나이터 폴더/application/config/database 파일에 DB정보를 입력해주면 DB연동 끝!
+
+2) 코드이그나이터 설정
+
+ - 연결할 DB정보 입력
+	application> config>database : hostname, username, password, database(스키마이름)
+ 
+ - 자동로드에 '데이터베이스' 추가
+ 	application>config>autoload : autoload [libraries] = array('database') 
+					autoload [model] = array('모델명') 해주면 모든 컨트롤러에서 자동으로 접근가능해짐.	
