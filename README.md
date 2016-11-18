@@ -71,12 +71,11 @@ ls
 10. 터미널 종료
 
 11/18================================================
-
+# controller에서 변수 보내기
 
 controller-> view로 파라미터를 넘겨서 화면에 출력하는 방법.
 
  - 달성
-controller에서 변수 보내기
 
 
 url  :  index.php/member/view/6
@@ -108,4 +107,17 @@ array(1) {
 
 
 Message: Cannot use object of type stdClass as array
+
+============================
+
+
+1.요구사항
+간단한 명령어로 git shell에서 sublime을 실행하고싶다.
+
+2.방법
+os는 콘솔 입력을 받으면 실행파일로 간주하고 미리 저장된 path에서 해당 실행파일을 찾게되어있다.
+ - sublime text의 위치 확인
+ - 내컴퓨터>(우클릭)속성>고급설정>고급tab>환경변수>Path(더블클릭)>새로만들기 : sublime text의 경로 저장
+ - shell 재시작
+
 
