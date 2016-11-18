@@ -39,3 +39,5 @@ https://codeigniter.com/
  - 자동로드에 '데이터베이스' 추가
  	application>config>autoload : autoload [libraries] = array('database') 
 					autoload [model] = array('모델명') 해주면 모든 컨트롤러에서 자동으로 접근가능해짐.	
+
+					
