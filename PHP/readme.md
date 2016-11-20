@@ -43,14 +43,14 @@ https://codeigniter.com/
 
 #controller에서 변수 보내기
 
-controller-> view로 파라미터를 넘겨서 화면에 출력하는 방법.
+ - controller-> view로 파라미터를 넘겨서 화면에 출력하는 방법.
 
 달성
 url : index.php/member/view/6
 
 $param = $this->uri->segment(3); //(위 url에서 6을 가져옴) $data['content'] = $this->member_m->fetch_content($param); $this -> load -> view('admin/admin/view_v',$data);
 
-view에서 변수 확인 (var_dump($array)함수로 확인가능)
+ - view에서 변수 확인 (var_dump($array)함수로 확인가능)
 
 var_dump 결과
 ```
@@ -61,4 +61,10 @@ array(1) { [0]=> object(stdClass)#23 (5) { ["SEQ"]=> string(1) "6" ["TITLE"]=> s
 
 Message: Cannot use object of type stdClass as array
 
-		
+ - 현상태
+
+출력을 위해 아래와 같이 했으나 에러 발생
+<?= $content[0]->["TITLE"]?>
+
+
+Message: Cannot use object of type stdClass as array
