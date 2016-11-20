@@ -1,4 +1,4 @@
-WAMP 설치하기
+# WAMP 설치하기
 
 1. https://bitnami.com/stack/wamp 다운받기
 (설치 과정중에 비밀번호 입력이 나오는데 잘 기억해두세요. 
@@ -61,10 +61,9 @@ array(1) { [0]=> object(stdClass)#23 (5) { ["SEQ"]=> string(1) "6" ["TITLE"]=> s
 
 Message: Cannot use object of type stdClass as array
 
- - 현상태
+ - 현상태(수정중)
 
 출력을 위해 아래와 같이 했으나 에러 발생
 <?= $content[0]->["TITLE"]?>
-
 
 Message: Cannot use object of type stdClass as array
