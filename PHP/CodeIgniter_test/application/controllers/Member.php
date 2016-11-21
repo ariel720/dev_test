@@ -61,7 +61,6 @@ class Member extends CI_Controller {
 	
 	function ajax_create()
 	{
-		
 		$param = $this->input->post(null, true);
 
 		if (empty($param['writer'])) { $this->return_json(false, 1, "작성자를 입력해주세요", null); }	
