@@ -1,17 +1,50 @@
 # WAMP 설치하기
 
-1. https://bitnami.com/stack/wamp 다운받기
-(설치 과정중에 비밀번호 입력이 나오는데 잘 기억해두세요. 
-나중에 워크벤치로 mysqlDB접속할때 쓰이는 비밀번호입니다. )
 
-설치 완료 화면
- - go to application : 연결이 잘되었으면 localhost 에 비트나미 화면이 나온다
-                       C:\Bitnami\wampstack-5.6.27-0\apache2\htdocs\index 파일.
- - open phpMyadmin : 
- - openapplication folder : 
+1.php-apache 연동하기 (wamp 설치)
 
-C:\Bitnami\wampstack-5.6.27-0\apache2\conf\extra\httpd_vhost  여기에서 localhost 경로를 바꿔줘요.
+ 1) http://www.wampserver.com/en/ 에서 다운로드.
 
+C:\wamp64 경로에 만들기
+
+
+(다른 서버가 실행되고있으면 제대로 실행이 안될수있으니 다른 서버는 꺼주세요.
+cmd 관리자 권한 실행 -> httpd -k stop 입력
+)
+
+
+ 2) httpd.conf 설정
+경로   C:\wamp64\bin\apache\apache2.4.23\conf/httpd.conf
+ 파일의 73번째 줄 근처에 Listen [::0]:80 을 찾으세요.
+바로아래에 원하는 포트번호로 Listen [::0]:8080 이렇게 만들어줍니다.
+
+ 3)vhost 경로 설정
+경로   C:\wamp64\bin\apache\apache2.4.23\conf\extra/httpd-vhost.conf 
+```
+<VirtualHost *:80>
+	ServerName localhost
+	DocumentRoot c:/wamp64/www
+	<Directory  "c:/wamp64/www/">
+		Options +Indexes +Includes +FollowSymLinks +MultiViews
+		AllowOverride All
+		Require local
+	</Directory>
+</VirtualHost>
+```
+
+위 내용을 똑같이 복붙해서 원하는 앞서 지정한 포트번호를 입력해주고, 원하는 경로로 수정해줍니다.
+
+```
+<VirtualHost *:8080>
+	ServerName localhost
+	DocumentRoot C:\Users\USER\test\dev_ariel\PHP\CodeIgniter_test
+	<Directory  "C:\Users\USER\test\dev_ariel\PHP\CodeIgniter_test">
+		Options +Indexes +Includes +FollowSymLinks +MultiViews
+		AllowOverride All
+		Require local
+	</Directory>
+</VirtualHost>
+```
 
 2.코드이그나이터 다운받기
 https://codeigniter.com/ 
