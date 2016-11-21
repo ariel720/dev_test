@@ -14,6 +14,18 @@
 "".to_i : int 로
 "".to_a : 배열로
 
+ - 주석
+ 1. # : 한줄 주석
+ 2. =begin
+ 	=end    :여러줄 주석
+
+ - 문자열 표기하기
+ "".upase : 모두 대문자
+ "".downcase : 모두 소문자
+ "".capitalize : 앞에만 대문자
+
+get.chomp : 문자 입력받기.  
+
 
 - 배열
 
