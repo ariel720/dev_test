@@ -46,19 +46,7 @@ cmd 관리자 권한 실행 -> httpd -k stop 입력
 </VirtualHost>
 ```
 
-2.코드이그나이터 다운받기
-https://codeigniter.com/ 
-
-3.vhost setting
- - apache2\conf\httpd.comf 에 포트번호 추가
- - conf/bitnami/bitnami.conf 에 80포트 복사해서 VirtualHost 추가
- - Apache Web Server 재시작 
-
-코드이그나이터 setting
-
-
-
-4.php DB연동하기
+3.php DB연동하기
 
 
 1) mysql & workbench 설치
@@ -81,7 +69,8 @@ https://codeigniter.com/
 달성
 url : index.php/member/view/6
 
-$param = $this->uri->segment(3); //(위 url에서 6을 가져옴) $data['content'] = $this->member_m->fetch_content($param); $this -> load -> view('admin/admin/view_v',$data);
+$param = $this->uri->segment(3); //(위 url에서 6을 가져옴)
+$data['content'] = $this->member_m->fetch_content($param); $this -> load -> view('admin/admin/view_v',$data);
 
  - view에서 변수 확인 (var_dump($array)함수로 확인가능)
 
