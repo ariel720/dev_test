@@ -58,6 +58,20 @@ class Member extends CI_Controller {
 		$this -> load -> view('admin/common/bottom_v');
 	}
 
+	function update()
+	{
+		
+		$info = array("title"=> "게시판", "location"=> "수정하기");
+
+		$param = $this->uri->segment(3);
+
+		$data['content'] = $this->member_m->fetch_content($param);
+
+		$this -> load -> view('admin/common/top_v', $info);
+		$this -> load -> view('admin/admin/update_v',$data);
+		$this -> load -> view('admin/common/bottom_v');
+	}
+
 	
 	function ajax_create()
 	{
@@ -81,6 +95,24 @@ class Member extends CI_Controller {
 		$this->member_m->remove_content($param['seq']);
 
 		$this->return_json(true, 1, "삭제성공", null);
+				
+	}
+
+	function ajax_update()
+	{
+		
+		$param = $this->input->post(null, true);
+
+		if (empty($param['seq'])) { $this->return_json(false, 1, "삭제 불가", null); }
+
+		if (empty($param['writer'])) { $this->return_json(false, 1, "작성자를 입력해주세요", null); }	
+		if (empty($param['title'])) { $this->return_json(false, 1, "제목을 입력해주세요", null); }	
+		if (empty($param['content'])) { $this->return_json(false, 1, "내용을 입력해주세요", null); }	
+	
+
+		$this->member_m->update_content($param);
+
+		$this->return_json(true, 1, "수정완료", null);
 				
 	}
 

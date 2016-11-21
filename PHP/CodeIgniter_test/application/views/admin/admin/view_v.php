@@ -46,6 +46,7 @@
 	 	<div class="clearfix btnArea"></div>
 	 	<div class="form-group">
 	 		<button class="btn btn-white" type="button" onclick="$.back()">목록가기</button>
+	 		<button class="btn btn-white" type="button" onclick="$.update(<?= $content[0]->SEQ?>)">수정</button>
 		</div>
 		</div>
 	</form>		
@@ -56,9 +57,12 @@
 $.back = function(){
 	location.href = '/index.php/member/board/';
 }
+$.update = function(seq){
+	
+	location.href = '/index.php/member/update/'+seq;
+}
 
 $(document).ready(function(){
-
-	
 });
+
 </script>

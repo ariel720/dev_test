@@ -53,7 +53,17 @@ class Member_m extends CI_Model {
 		$this->db->delete('tb_board');
 	}
 
+	function update_content($param) {
 
+		$data = array(
+              'WRITER' => $param['writer'],
+               'TITLE' => $param['title'],
+               'CONTENTS' => $param['content']
+            );
+
+		$this->db->where('SEQ', $param['seq']);
+		$this->db->update('tb_board', $data); 
+	}
 
 
 	
