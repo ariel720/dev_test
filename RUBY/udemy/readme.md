@@ -252,6 +252,3 @@ puts "info : #{user.name}, #{user.email}"
 ```
 
  - 모듈
-
-
-
