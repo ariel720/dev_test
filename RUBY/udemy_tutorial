@@ -1,0 +1,98 @@
+
+[레일즈 시작하기udemy.com]
+
+1. c9.io 가입
+
+
+2. 레일즈 workspace 생성하기
+
+
+3. 
+
+
+
+
+
+[간단 루비 문법 udemy.com]
+ - string 찍기 - 그냥 출력, 변수에 담기, 함수 호출
+
+
+아래 콘솔에 irb입력
+ - ?.class : 데이터의 형태를 보여줌
+ - ?.method : 어떤 메소드를 쓸수있는지 보여줌.
+
+
+
+ * 변수는 변수를 가리킬수없다.
+first, first_also
+
+*
+ - name ="shinhee"
+ - "my name is #{name}" = "my name is shinhee" (싱글쿼트에서 못씀.)
+
+
+*싱글쿼트두번쓰기 (그냥 쓰면 안됨.)
+'ariel said /'good morning/''
+
+
+puts "name?"
+name = gets.chomp
+puts "age?"
+age = gets.chomp : String으로 값을 입력받기때문에 숫자를 입력하려면 받은다음에 to_i 해줘야함.
+
+puts "welcome #{name} #{age}!"
+
+
+
+숫자
+
+
+puts 20/3->몫 만나옴
+puts 20.0/3 =>float 
+puts 20/3.to_f =>float 
+
+22.odd? 홀수니?
+22.even?
+
+부등호를 쓰면 boolean값 반환
+
+rand :  랜덤숫자
+rand(10) : 0~10 사이의 숫자 반환
+
+스트링숫자를 int로 바꿀수있음.
+
+puts "num1?"
+num1 = gets.chomp
+puts "num2?"
+num2 = gets.chomp
+
+puts "num1+num2 = #{num1.to_i+num2.to_i}"
+
+
+def mutiply(num1,num2)
+  
+  num1.to_i*num2.to_i
+  
+end
+
+def divide(num1,num2)
+  
+  num1.to_i/num2.to_i
+  
+end
+
+puts "num1?"
+num1 = gets.chomp
+
+puts "num2?"
+num2 = gets.chomp
+
+
+puts "what do you want to do with two numbers? 1)multiply, 2)divide"
+prompt = gets.chomp
+
+if prompt=='1'
+  puts "num1*num2 = #{mutiply(num1,num2)}"
+elsif prompt=='2'
+  puts "num1/num2 = #{divide(num1,num2)}"
+end
