@@ -212,7 +212,7 @@ end
  - what is object oriented programming (객체지향 프로그래밍)
  : 캡슐화,추상화, 상속,다형성
 
-```
+```ruby
  class User
   
 
