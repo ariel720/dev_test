@@ -10,7 +10,8 @@
 create workspace >
 workspace name, Description, choose template (ruby 선택) > 생성
 
-
+3.cloud9 - github 연동하기.
+http://lepidllama.net/blog/how-to-push-an-existing-cloud9-project-to-github/
 
 
 
@@ -251,4 +252,57 @@ puts "info : #{user.name}, #{user.email}"
 
 ```
 
- - 모듈
+ - 상속
+ 위의 User 클래스를 상속받은 객체
+```ruby
+ class Buyer <User
+  def run
+    puts "im running"
+  end
+end
+
+
+#User를 상속받았으므로 생성하는 방법은 User생성과 같다
+buyer1 = Buyer.new("test1","test1@test1.com")
+buyer1.run
+
+
+puts Byuer.ancestor # 조상클래스 찾아보기
+=> User, Object, Kernel, BasicObject
+
+```
+
+ - 모듈 : 클래스와 비슷하지만 객체생성할 필요가 없어요.
+
+
+
+module Destructable
+ def destroy (obj)
+    puts "destroy obj"
+  end
+end
+
+
+Class action
+include Destructable    #해당 클래스 안에서 쓸 모듈을 선언
+
+end
+
+ - 연습문제 : working with json 
+
+  https://ide.c9.io/shinhee/completerubyonrailscourse
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
