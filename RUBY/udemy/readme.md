@@ -1,10 +1,7 @@
 
-[레일즈 시작하기udemy.com]
+#section1. setting
 
 1. c9.io 가입
-
-
-
 
 2. 레일즈 workspace 생성하기
 create workspace >
@@ -14,8 +11,8 @@ workspace name, Description, choose template (ruby 선택) > 생성
 http://lepidllama.net/blog/how-to-push-an-existing-cloud9-project-to-github/
 
 
+#section2. ruby programming language
 
-[간단 루비 문법 udemy.com]
  - string 찍기 - 그냥 출력, 변수에 담기, 함수 호출
 
 
@@ -291,17 +288,58 @@ end
  - 연습문제 : working with json 
 
   https://ide.c9.io/shinhee/completerubyonrailscourse
+#section3. ruby on rails
+
+# rails 시작하기.(mvc 패턴)
+시작할 폴더를 만들어요.
+ : mkdirt project
+레일즈를 만들어요.(자동으로 필요한 파일들이 만들어져요.)
+ : rails new test_app
+ 로컬에서 rails 실행하기
+: rails s -b 0.0.0.0:3000
+라우터(컨트롤러 명시)에 뭐가있는지 보기
+: rake routes
+
+git&버젼컨트롤
+git --version  :버젼 확인하기
+git config --global user.name "ariel720"
+git config --global user.email "ariel720@naver.com"
+
+git config --list : 접속자 정보
+
+git rm -rf 파일명 : 파일지우기
+git checkout -f : 지운 파일 되살리기
+
+저장소를 설치하고 나면 나오는 명령어에 따라 파일을 업로드해주세요.
+
+(깃 저장소가 없다면 git init 해서 저장소를 만드시구요~)
 
 
 
+[heroku] (업데이트 하고 싶은 폴더 위치 안에서 )
 
+0. heroku 사용할수 있도록 app setting 
 
+1. heroku 설치하기
+wget -O- https://toolbelt.heroku.com/install-ubuntu.sh | sh
 
+2. 로그인하기
+heroku login
+메일과 비밀번호 입력
 
+3. heroku create
+새로운 저장소 만듦.
 
+4. push 
+(heroku 연동후 파일이 업데이트 되었으므로 git commit 한번 해주세용.)
+나의 ssh 키정보를 업데이트 해주세요.
+heroku keys:add   ......  Y 선택하면 heroku 업데이트 끝.
+git push heroku master     깃헙에 업데이트 끝.
 
+(  https://calm-springs-23492.herokuapp.com/ 하면서 나의 app이 올라가있는 주소가 나옵니다.)
 
-
+5. 주소 바꾸기
+heroku rename ariel-rails-test
 
 
 
